@@ -1,6 +1,3 @@
-// TO MAKE THE MAP APPEAR YOU MUST
-// ADD YOUR ACCESS TOKEN FROM
-// https://account.mapbox.com
 mapboxgl.accessToken = mapToken;
 
 const map = new mapboxgl.Map({
@@ -14,3 +11,7 @@ const marker = new mapboxgl.Marker({ color: "red" })
     .setPopup(new mapboxgl.Popup({ offset: popupOffsets })
         .setHTML(`<h3>${listing.location}</h3><p>Exact location will be provided after booking</p>`))
     .addTo(map);
+
+console.log('Mapbox Token:', mapboxgl.accessToken);
+console.log('Listing Geometry:', listing.geometry);
+console.log('Coordinates:', listing.geometry ? listing.geometry.coordinates : 'No coordinates');
